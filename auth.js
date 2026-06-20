@@ -2,14 +2,15 @@
 const supabaseUrl = 'https://mdgofogpghlwesaduxrq.supabase.co';
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1kZ29mb2dwZ2hsd2VzYWR1eHJxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE4NjIwNjksImV4cCI6MjA5NzQzODA2OX0.DpBoUIZbxzKjOOWw4r-7Vhtupva_fIg5cEhcKgb19ic';
 
-// On utilise window.monSupabase pour être sûr qu'il n'y ait aucun conflit de nom
+// Initialisation globale unique
 window.monSupabase = window.supabase.createClient(supabaseUrl, supabaseKey);
 
 const Auth = (() => {
-    // Dans tout le reste de ton fichier auth.js, 
-    // remplace chaque occurrence de "supabase" par "window.monSupabase"
-    // ...
+    // Raccourci pour utiliser la variable globale
+    const db = window.monSupabase;
+    
     const SESSION_KEY = 'quran_session';
+    // ... reste de ton code
 
     // --- GESTION DE LA SESSION LOCALE ---
     function getSession() {
