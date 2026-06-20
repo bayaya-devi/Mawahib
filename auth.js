@@ -1,9 +1,8 @@
-// auth.js - VERSION CORRIGÉE
 const supabaseUrl = 'https://mdgofogpghlwesaduxrq.supabase.co';
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1kZ29mb2dwZ2hsd2VzYWR1eHJxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE4NjIwNjksImV4cCI6MjA5NzQzODA2OX0.DpBoUIZbxzKjOOWw4r-7Vhtupva_fIg5cEhcKgb19ic';
-// Fix CDN : supabase-js@2 expose createClient via window.supabase
-const { createClient } = window.supabase;
-const supabase = createClient(supabaseUrl, supabaseKey);
+
+// Méthode directe et 100% sûre pour utiliser le CDN
+const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
 
 const Auth = (() => {
     const SESSION_KEY = 'quran_session';
