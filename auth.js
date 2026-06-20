@@ -8,7 +8,7 @@ window.monSupabase = window.supabase.createClient(supabaseUrl, supabaseKey);
 const Auth = (() => {
     // Raccourci pour utiliser la variable globale
     const db = window.monSupabase;
-    
+    const supabase = db;
     const SESSION_KEY = 'quran_session';
     // ... reste de ton code
 
